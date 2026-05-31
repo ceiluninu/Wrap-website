@@ -42,7 +42,6 @@ services:
   # ─────────────────────────────────────────────
   - type: web
     name: wrapbrand-frontend
-    plan: free
     runtime: static
     rootDir: frontend
     buildCommand: npm install && npm run build
