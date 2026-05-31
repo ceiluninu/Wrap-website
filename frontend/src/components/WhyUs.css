@@ -1,0 +1,113 @@
+.why-section {
+  background: linear-gradient(180deg, #FFF5EB 0%, var(--color-bg) 100%);
+}
+
+.why-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.why-left .section-header {
+  margin-bottom: 40px;
+}
+
+.why-image-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.why-image {
+  width: 100%;
+  max-width: 420px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+
+.why-image-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--color-orange);
+  color: white;
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.badge-number {
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.badge-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.feature-card {
+  background: var(--feat-bg, #FEF0E6);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  transition: all var(--transition);
+  border: 2px solid transparent;
+  cursor: default;
+}
+
+.feature-card:hover {
+  border-color: var(--feat-color);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 14px;
+  display: block;
+  transition: transform var(--transition);
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.2);
+}
+
+.feature-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-brown);
+  margin-bottom: 8px;
+}
+
+.feature-desc {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .why-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .why-left .section-header { text-align: center; }
+  .why-image-wrap { display: flex; justify-content: center; }
+  .why-image { max-width: 340px; }
+  .why-image-badge { right: -10px; bottom: -10px; }
+}
+
+@media (max-width: 480px) {
+  .features-grid { grid-template-columns: 1fr; }
+}

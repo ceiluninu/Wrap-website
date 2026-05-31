@@ -1,0 +1,99 @@
+.categories-section {
+  background: linear-gradient(180deg, var(--color-bg) 0%, #FFF5EB 100%);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 20px;
+  border-radius: var(--radius-xl);
+  background: var(--bg, #FEF0E6);
+  border: 2px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--border, #F97316);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.category-card:hover::before {
+  opacity: 1;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.category-emoji {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: block;
+  transition: transform var(--transition);
+  line-height: 1;
+}
+
+.category-card:hover .category-emoji {
+  transform: scale(1.2) rotate(-5deg);
+}
+
+.category-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-brown);
+  margin-bottom: 4px;
+}
+
+.category-count {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+}
+
+.category-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--border, #F97316);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all var(--transition);
+}
+
+.category-card:hover .category-arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .categories-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .category-card { padding: 24px 16px; }
+  .category-emoji { font-size: 2.2rem; }
+}

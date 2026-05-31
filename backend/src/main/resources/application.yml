@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: wrapbrand-backend
+  
+  # Database Configuration
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/wrapbrand}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  
+  # JPA / Hibernate Configuration
+  jpa:
+    hibernate:
+      # Rely on Flyway for schema management in production
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # Flyway Configuration
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: always
+
+# JWT Configuration
+app:
+  jwt:
+    secret: ${JWT_SECRET:5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437}
+    expirationMs: 86400000 # 24 hours
+
+# CORS Settings
+cors:
+  allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173}

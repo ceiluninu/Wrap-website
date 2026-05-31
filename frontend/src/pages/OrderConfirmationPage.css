@@ -1,0 +1,150 @@
+.order-confirmation-page {
+  background: var(--color-bg);
+  min-height: calc(100vh - var(--navbar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 64px 48px;
+  text-align: center;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--color-border);
+  max-width: 600px;
+  width: 100%;
+}
+
+.success-icon-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--color-green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 32px;
+  animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.success-icon {
+  font-size: 3rem;
+  color: var(--color-green);
+  font-weight: 800;
+  animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s forwards;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.success-card h1 {
+  font-size: 2.2rem;
+  color: var(--color-brown);
+  margin-bottom: 8px;
+}
+
+.order-number {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  margin-bottom: 24px;
+}
+
+.success-msg {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+/* Timeline */
+.order-status-timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 56px;
+  padding: 0 20px;
+}
+
+.order-status-timeline::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  right: 30px;
+  height: 4px;
+  background: var(--color-border);
+  z-index: 1;
+}
+
+.status-step {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.step-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-border);
+  border: 4px solid white;
+  transition: all var(--transition);
+}
+
+.status-step.active .step-dot {
+  background: var(--color-green);
+}
+
+.status-step.active.pulse .step-dot {
+  background: var(--color-orange);
+  box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+  animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.status-step span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  white-space: nowrap;
+}
+
+.status-step.active span {
+  color: var(--color-brown);
+}
+
+.success-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+}
+
+@media (max-width: 600px) {
+  .success-card { padding: 40px 24px; }
+  .success-actions { flex-direction: column; }
+  .order-status-timeline { flex-direction: column; align-items: flex-start; gap: 24px; padding: 0; }
+  .order-status-timeline::before {
+    left: 10px; top: 10px; bottom: 10px; right: auto; width: 4px; height: auto;
+  }
+  .status-step { flex-direction: row; }
+}

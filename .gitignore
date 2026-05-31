@@ -1,0 +1,58 @@
+# ==============================
+# Node / Frontend
+# ==============================
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vite/
+frontend/.vite/
+frontend/dist/
+
+# ==============================
+# Java / Maven / Backend
+# ==============================
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+backend/target/
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+
+# ==============================
+# Spring Boot
+# ==============================
+backend/src/main/resources/application-local.yml
+backend/src/main/resources/application-secret.yml
+HELP.md
+
+# ==============================
+# IDE / Editor
+# ==============================
+.idea/
+*.iml
+*.iws
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Environment / Secrets
+# ==============================
+.env
+*.env
+*.env.local
+secrets/

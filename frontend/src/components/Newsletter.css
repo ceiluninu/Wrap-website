@@ -1,0 +1,145 @@
+.newsletter-section {
+  background: linear-gradient(135deg, var(--color-brown) 0%, #A0623A 50%, var(--color-orange) 100%);
+  padding: var(--section-padding) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-section::before {
+  content: '🌯🌯🌯🌯🌯🌯🌯🌯🌯🌯';
+  font-size: 5rem;
+  position: absolute;
+  top: -20px;
+  right: -40px;
+  opacity: 0.06;
+  letter-spacing: 20px;
+  pointer-events: none;
+}
+
+.newsletter-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.newsletter-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.newsletter-content h2 {
+  color: white;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  margin-bottom: 16px;
+  white-space: pre-line;
+}
+
+.newsletter-content p {
+  color: rgba(255,255,255,0.8);
+  font-size: 1rem;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.newsletter-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter-perks li {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.newsletter-form-wrap {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+}
+
+.newsletter-emoji {
+  font-size: 3.5rem;
+  margin-bottom: 12px;
+  animation: bounce 2s ease infinite;
+  display: block;
+}
+
+.newsletter-form-wrap h3 {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.email-field {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: var(--radius-full);
+  padding: 4px 4px 4px 18px;
+  gap: 10px;
+}
+
+.email-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.email-input {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  padding: 10px 0;
+  font-family: var(--font-primary);
+}
+
+.newsletter-btn {
+  width: 100%;
+  justify-content: center;
+  background: white !important;
+  color: var(--color-orange) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2) !important;
+}
+
+.newsletter-btn:hover {
+  background: var(--color-bg) !important;
+}
+
+.privacy-note {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .newsletter-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .newsletter-content { text-align: center; }
+  .newsletter-perks { align-items: center; }
+  .newsletter-form-wrap { padding: 28px 20px; }
+}
