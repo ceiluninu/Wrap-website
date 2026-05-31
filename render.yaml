@@ -1,13 +1,13 @@
-services:
+databases:
   # ─────────────────────────────────────────────
   # PostgreSQL Database
   # ─────────────────────────────────────────────
-  - type: pserv
-    name: wrapbrand-db
+  - name: wrapbrand-db
     plan: free
     databaseName: wrapbrand
     user: wrapbrand_user
 
+services:
   # ─────────────────────────────────────────────
   # Spring Boot Backend (Web Service)
   # ─────────────────────────────────────────────
@@ -16,7 +16,7 @@ services:
     plan: free
     runtime: java
     rootDir: backend
-    buildCommand: ./mvnw clean package -DskipTests
+    buildCommand: mvn clean package -DskipTests
     startCommand: java -jar target/wrapbrand-backend-1.0.0.jar
     healthCheckPath: /actuator/health
     envVars:
@@ -37,7 +37,7 @@ services:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
       - key: ALLOWED_ORIGINS
-        value: https://wrapbrand.onrender.com
+        value: https://wrapbrand-frontend.onrender.com
 
   # ─────────────────────────────────────────────
   # React Frontend (Static Site)
