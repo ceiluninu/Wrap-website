@@ -18,10 +18,18 @@ services:
     rootDir: backend
     healthCheckPath: /actuator/health
     envVars:
-      - key: DB_URL
+      - key: DB_HOST
         fromDatabase:
           name: wrapbrand-db
-          property: connectionString
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: wrapbrand-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: wrapbrand-db
+          property: database
       - key: DB_USERNAME
         fromDatabase:
           name: wrapbrand-db

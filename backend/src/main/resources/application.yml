@@ -4,7 +4,7 @@ spring:
   
   # Database Configuration
   datasource:
-    url: ${JDBC_DATABASE_URL:jdbc:${DB_URL:postgresql://localhost:5432/wrapbrand}}
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:wrapbrand}
     username: ${DB_USERNAME:postgres}
     password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
